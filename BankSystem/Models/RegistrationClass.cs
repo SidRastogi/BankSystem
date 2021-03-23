@@ -30,7 +30,9 @@ namespace BankSystem.Models
 
             [Required(ErrorMessage = "Please Enter The Phone ...")]
             [Display(Name = "Phone")]
-            public int Phone { get; set; }
+            [DataType(DataType.PhoneNumber)]
+            [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid number")]
+            public string Phone { get; set; }
       
     }
 }

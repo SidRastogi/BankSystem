@@ -53,7 +53,7 @@ namespace BankSystem
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=UserRegistrationControllers}/{action=Create}/{id?}");
+                   pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
