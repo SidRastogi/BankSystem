@@ -36,7 +36,7 @@ namespace BankSystem.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(RegistrationClass uc)
         {
-            MailMessage mm = new MailMessage("sid@gmail.com", uc.Uemail);
+            MailMessage mm = new MailMessage(BankSystem.Properties.Resources.form, uc.Uemail);
             mm.Subject = "test";
             mm.Body = "hello";
             mm.IsBodyHtml = false;
@@ -46,7 +46,7 @@ namespace BankSystem.Controllers
             smtp.Port = 587;
             smtp.EnableSsl = true;
             smtp.UseDefaultCredentials = true;
-            NetworkCredential nc = new NetworkCredential("sidjohnwick007@gmail.com", "john999@@@");
+            NetworkCredential nc = new NetworkCredential(BankSystem.Properties.Resources.email, BankSystem.Properties.Resources.password);
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtp.Credentials = nc;
             smtp.Send(mm);
