@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using BankSystem.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace BankSystem
 {
@@ -25,8 +26,12 @@ namespace BankSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationUserClass>(options => options.UseSqlServer(Configuration.GetConnectionString("Myconnection")));
+            services.AddDbContext<ApplicationUserClass>(options => options.UseSqlServer(BankSystem.Properties.Resources.ConnectionString));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllersWithViews();
+            services.AddSession(option => {
+                option.IdleTimeout = TimeSpan.FromMinutes(15);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +49,7 @@ namespace BankSystem
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();

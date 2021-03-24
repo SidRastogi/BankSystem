@@ -160,3 +160,6 @@ G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\Razor\Views\View.cshtml.g.cs
 G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs
 G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\Razor\Views\Login\Success.cshtml.g.cs
 G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\Razor\Views\Login\Error.cshtml.g.cs
+G:\ww\BankSystem\BankSystem\bin\Debug\netcoreapp3.1\Edmw.ApiInvokerHttpClient.dll
+G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\BankSystem.Properties.Resources.resources
+G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\BankSystem.csproj.GenerateResource.cache

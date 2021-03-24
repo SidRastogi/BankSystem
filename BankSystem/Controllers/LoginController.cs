@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using BankSystem.Models;
 using System.Data.SqlClient;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace BankSystem.Controllers
 {
@@ -21,7 +23,7 @@ namespace BankSystem.Controllers
         }
         void connectionString()
         {
-            con.ConnectionString = "data source=DESKTOP-IVGEIVG; database=BankSystem; integrated security = SSPI";
+            con.ConnectionString = BankSystem.Properties.Resources.ConnectionString;
         }
         [HttpPost]
         public IActionResult Verify(LoginClass acc)
@@ -31,8 +33,11 @@ namespace BankSystem.Controllers
             com.Connection = con;
             com.CommandText = "select * from UsersReg where Uemail = '"+acc.Uemail+"' and Pwd ='"+acc.Pwd+"'";
             dr = com.ExecuteReader();
-            if(dr.Read())
+            if (dr.Read())
             {
+                HttpContext.Session.SetString("UserId", dr.GetString(0));
+                HttpContext.Session.SetString("UserName", dr.GetString(1));
+                HttpContext.Session.SetString("Email", dr.GetString(3));
                 con.Close();
                 return View("Success");
             }
