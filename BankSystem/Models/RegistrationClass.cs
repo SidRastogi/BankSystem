@@ -33,6 +33,8 @@ namespace BankSystem.Models
             [DataType(DataType.PhoneNumber)]
             [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid number")]
             public string Phone { get; set; }
-      
+
+            public int verified { get; set; }
+
     }
 }

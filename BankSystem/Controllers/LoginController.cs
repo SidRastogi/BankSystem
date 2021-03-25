@@ -35,6 +35,7 @@ namespace BankSystem.Controllers
             dr = com.ExecuteReader();
             if (dr.Read())
             {
+
                 HttpContext.Session.SetString("UserId", dr.GetString(0));
                 HttpContext.Session.SetString("UserName", dr.GetString(1));
                 HttpContext.Session.SetString("Email", dr.GetString(3));

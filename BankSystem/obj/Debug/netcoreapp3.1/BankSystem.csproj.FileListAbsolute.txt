@@ -163,3 +163,4 @@ G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\Razor\Views\Login\Error.csht
 G:\ww\BankSystem\BankSystem\bin\Debug\netcoreapp3.1\Edmw.ApiInvokerHttpClient.dll
 G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\BankSystem.Properties.Resources.resources
 G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\BankSystem.csproj.GenerateResource.cache
+G:\ww\BankSystem\BankSystem\obj\Debug\netcoreapp3.1\Razor\Views\UserRegistrationControllers\EmailVerification.cshtml.g.cs

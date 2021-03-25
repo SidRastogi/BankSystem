@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using BankSystem.Models;
 using System.Net;
 using System.Net.Mail;
+using Microsoft.AspNetCore.Http;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -54,6 +55,14 @@ namespace BankSystem.Controllers
             _auc.Add(uc);
             _auc.SaveChanges();
             ViewBag.message = "The User " + uc.UserName + " Is Saved Successfully ...!";
+            return View();
+        }
+
+        [HttpGet]
+        [Route("Registration/Verification/{email}")]
+        public IActionResult EmailVerification(string email)
+        {
+            ViewBag.Data = "sajskhakshj" + email;
             return View();
         }
     }
