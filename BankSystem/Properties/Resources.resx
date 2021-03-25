@@ -121,4 +121,13 @@
     <value>Data Source=DESKTOP-IVGEIVG; database=BankSystem; integrated security = SSPI</value>
     <comment>Sql Server Connection</comment>
   </data>
+  <data name="email" xml:space="preserve">
+    <value>sidjohnwick007@gmail.com</value>
+  </data>
+  <data name="form" xml:space="preserve">
+    <value>sidjohnwick007@gmail.com</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>john999@@@</value>
+  </data>
 </root>
