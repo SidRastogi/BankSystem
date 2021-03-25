@@ -19,13 +19,12 @@ namespace BankSystem.Controllers
         {
             _logger = logger;
         }
-
+        [Route("/")]
         public IActionResult Index()
         {
-           
-            return View();
+                      return View();
         }
-
+        [Route("Privacy")]
         public IActionResult Privacy()
         {
             return View();

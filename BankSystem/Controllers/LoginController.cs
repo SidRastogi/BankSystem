@@ -17,6 +17,7 @@ namespace BankSystem.Controllers
         SqlDataReader dr;
         // Get: Account 
         [HttpGet]
+        [Route("Login")]
         public IActionResult Login()
         {
             return View();
@@ -26,17 +27,17 @@ namespace BankSystem.Controllers
             con.ConnectionString = BankSystem.Properties.Resources.ConnectionString;
         }
         [HttpPost]
+        [Route("Login")]
         public IActionResult Verify(LoginClass acc)
         {
             connectionString();
             con.Open();
             com.Connection = con;
-            com.CommandText = "select * from UsersReg where Uemail = '"+acc.Uemail+"' and Pwd ='"+acc.Pwd+"'";
+            com.CommandText = "SELECT * from UsersReg where Uemail = '" + acc.Uemail+"' and Pwd ='"+acc.Pwd+"'";
             dr = com.ExecuteReader();
             if (dr.Read())
             {
-
-                HttpContext.Session.SetString("UserId", dr.GetString(0));
+               /* HttpContext.Session.SetString("UserId", dr['UserId'].ToString());*/
                 HttpContext.Session.SetString("UserName", dr.GetString(1));
                 HttpContext.Session.SetString("Email", dr.GetString(3));
                 con.Close();

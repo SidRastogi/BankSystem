@@ -27,13 +27,14 @@ namespace BankSystem.Controllers
         {
             return View();
         }
-
+        [Route("Registration")]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Route("Registration")]
         [ValidateAntiForgeryToken]
         public IActionResult Create(RegistrationClass uc)
         {
@@ -59,10 +60,12 @@ namespace BankSystem.Controllers
         }
 
         [HttpGet]
-        [Route("Registration/Verification/{email}")]
+        [Route("Verification/{email}")]
         public IActionResult EmailVerification(string email)
         {
             ViewBag.Data = "sajskhakshj" + email;
+           
+           
             return View();
         }
     }
